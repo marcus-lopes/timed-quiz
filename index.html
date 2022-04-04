@@ -15,40 +15,18 @@
             <h1>Deseja iniciar o quiz?</h1>
             <button id="button">iniciar quiz</button>
         </nav>
-        <nav class="questions">
-            <h4 class="timer"></h4>
-            <nav class="fistQuestion">
-                <h1>Qual desses personagens é o protagonista de Dragon Ball?</h1>
-                <nav>
-                    <button id="vegeta">Vegeta</button>
-                    <button id="gohan">Gohan</button>
-                    <button id="goku">Goku</button>
-                    <button id="broly">Broly</button>
-                </nav>
-            </nav>
-            <nav class="secondQuestion">
-                <h1>Qual a capital do Brasil?</h1>
-                <button id="rio">Rio de Janeiro</button>
-                <button id="belo">Belo Horizonte</button>
-                <button id="sp">São Paulo</button>
-                <button id="bra">Brasilia</button>
-            </nav>
-            <nav class="thirdQuestion">
-                <h1>Quantos sayajins ainda estão vivos e morando na Terra?</h1>
-                <button id="n7">7 sayajins</button>
-                <button id="n10">10 sayajins</button>
-                <button id="n4">4 sayajins</button>
-                <button id="n8">9 sayajins</button>
-            </nav>
-            <nav class="fourthQuestion">
-                <h1>Qual o nome do Deus da Destrição do universo 7?</h1>
-                <button id="champa">Champa</button>
-                <button id="bills">Bills</button>
-                <button id="quitela">Quitela </button>
-                <button id="sidra">Sidra</button>
-            </nav>
-        </nav>
-        <nav class="pontuação"></nav>
+        <div class="questions" style="display: none;">
+            <h4>Seconds remaining: <span id="timer">60</span></h4>
+            <div>
+                <h1 id="question"></h1>
+                <div id="buttons">
+                    <button data-index="0" id="ans1"></button>
+                    <button data-index="1" id="ans2"></button>
+                    <button data-index="2" id="ans3"></button>
+                </div>
+             </div>
+        </div>
+        <div class="points"></div>
 
         <script src="./assets/script.js"></script>
     </section>
