@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,51 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <section>
+    <section class="myQuiz">
         <nav class="iniciarQuiz">
             <h1>Deseja iniciar o quiz?</h1>
             <button id="button">iniciar quiz</button>
         </nav>
+        <nav class="questions">
+            <h4 class="timer"></h4>
+            <nav class="fistQuestion">
+                <h1>Qual desses personagens é o protagonista de Dragon Ball?</h1>
+                <nav>
+                    <button id="vegeta">Vegeta</button>
+                    <button id="gohan">Gohan</button>
+                    <button id="goku">Goku</button>
+                    <button id="broly">Broly</button>
+                </nav>
+            </nav>
+            <nav class="secondQuestion">
+                <h1>Qual a capital do Brasil?</h1>
+                <button id="rio">Rio de Janeiro</button>
+                <button id="belo">Belo Horizonte</button>
+                <button id="sp">São Paulo</button>
+                <button id="bra">Brasilia</button>
+            </nav>
+            <nav class="thirdQuestion">
+                <h1>Quantos sayajins ainda estão vivos e morando na Terra?</h1>
+                <button id="n7">7 sayajins</button>
+                <button id="n10">10 sayajins</button>
+                <button id="n4">4 sayajins</button>
+                <button id="n8">9 sayajins</button>
+            </nav>
+            <nav class="fourthQuestion">
+                <h1>Qual o nome do Deus da Destrição do universo 7?</h1>
+                <button id="champa">Champa</button>
+                <button id="bills">Bills</button>
+                <button id="quitela">Quitela </button>
+                <button id="sidra">Sidra</button>
+            </nav>
+        </nav>
+        <nav class="pontuação"></nav>
 
         <script src="./assets/script.js"></script>
     </section>
-    
+
 </body>
+
 </html>

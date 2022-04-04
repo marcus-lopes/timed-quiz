@@ -1,9 +1,34 @@
-.iniciarQuiz{
+.myQuiz{
     font-size: 40px;
     text-align: center;
 }
 
-.iniciarQuiz button{
+.myQuiz button{
     padding: 15px;
     font-size: 20px;
+}
+
+.timer{
+    display: none;
+    text-align: right;
+}
+
+.fistQuestion{
+    display: none;
+}
+
+.secondQuestion{
+    display: none;
+}
+
+.thirdQuestion{
+    display: none;
+}
+
+.fourthQuestion{
+    display: none;
+}
+
+.pontuação{
+    display: none;
 }
