@@ -80,7 +80,7 @@ answersButtons.addEventListener('click', function(event){
         currentQuestion++;
         showNextQuestion();
     }else{
-        console.log('implement end game')
+        // var name = prompt("What's your name?")
     }
 })
 
@@ -100,15 +100,29 @@ function showNextQuestion(){
 }
 
 function startTimer(){
-    var timer = 60;
+    var timer = 6;
     var timeInterval = setInterval(function(){
         timer--;
         myTimer.textContent = timer;
 
-        if(timer <= 0){
+        if(timer === 0){
             clearInterval(timeInterval);
+            hideStartQuiz(questionsDiv);
+            endGame();
+            // loser();
         }
     }, 1000);
 }
 
+function endGame(){
+   var dataObjeto = JSON.stringify(questions.options);
+   localStorage.setItem('obj', dataObjeto);
+}
 
+// function loser(){
+//     var youLoser = "";
+//     if(timer === 0){ 
+//     youLoser.textContent = "You lost!!";
+//     console.log(youLoser);
+//  }
+// }
