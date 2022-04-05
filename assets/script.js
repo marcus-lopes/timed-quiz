@@ -1,5 +1,5 @@
 var buttonStartQuiz = document.querySelector('#button');
-var startQuiz = document.querySelector('.iniciarQuiz');
+var startQuiz = document.querySelector('.startQuiz');
 var questionsDiv = document.querySelector('.questions');
 var answersButtons = document.querySelector('#buttons');
 var points = document.querySelector('.points');
@@ -9,6 +9,9 @@ var question = document.querySelector('#question');
 var ans1 = document.querySelector('#ans1');
 var ans2 = document.querySelector('#ans2');
 var ans3 = document.querySelector('#ans3');
+var seconds = 60;
+var timeInterval ;
+var refresh ;
 
 var questions = [
     {
@@ -58,6 +61,18 @@ var questions = [
     }
 ];
 
+var lastResult = JSON.parse(localStorage.getItem("obj"));
+
+if(lastResult){
+    showLastResult();
+}
+
+function showLastResult(){
+    var resultEl  = document.createElement('p');
+    resultEl.textContent = lastResult.name + ' got a score of: ' + lastResult.points + '/ with time remaining ' + lastResult.seconds;
+    points.append(resultEl);
+}
+
 var currentQuestion = 0;
 
 //botão para começar o quiz e iniciar a primeira pergunta
@@ -74,13 +89,14 @@ answersButtons.addEventListener('click', function(event){
     if(clickedBtn.matches('button')){
         var optionIndex = clickedBtn.getAttribute('data-index');
         console.log(optionIndex);
-        console.log(currentQuestion)
+        console.log(currentQuestion);
     }
     if(currentQuestion < questions.length-1){
         currentQuestion++;
         showNextQuestion();
     }else{
-        // var name = prompt("What's your name?")
+        clearInterval(timeInterval);
+        endGame();
     }
 })
 
@@ -100,12 +116,11 @@ function showNextQuestion(){
 }
 
 function startTimer(){
-    var timer = 6;
-    var timeInterval = setInterval(function(){
-        timer--;
-        myTimer.textContent = timer;
+    timeInterval = setInterval(function(){
+        seconds--;
+        myTimer.textContent = seconds;
 
-        if(timer === 0){
+        if(seconds === 0){
             clearInterval(timeInterval);
             hideStartQuiz(questionsDiv);
             endGame();
@@ -114,9 +129,19 @@ function startTimer(){
     }, 1000);
 }
 
+function Punctuation(){
+     
+}
+
 function endGame(){
-   var dataObjeto = JSON.stringify(questions.options);
+    var name = prompt("What's your name?");
+   var dataObjeto = JSON.stringify({seconds, name});
    localStorage.setItem('obj', dataObjeto);
+   reload();
+}
+
+function reload(){
+    window.location.reload();
 }
 
 // function loser(){
@@ -126,3 +151,5 @@ function endGame(){
 //     console.log(youLoser);
 //  }
 // }
+
+
